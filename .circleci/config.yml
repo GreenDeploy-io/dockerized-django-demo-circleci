@@ -81,7 +81,7 @@ jobs:
           name: run collectstatic
           command: |
             . venv/bin/activate
-            python manage.py collectstatic --noinput
+            python3 manage.py collectstatic --noinput
       - run: # run tests
           # note the --parallel flag using 8 which is based on xlarge resource class
           name: run tests using manage.py

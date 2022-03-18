@@ -1,4 +1,4 @@
-FROM ubuntu:focal-20220113
+FROM ubuntu:focal-20220316
 # because ubuntu-focal uses python3 for latest python3.9 and pip3
 
 ENV PYTHONDONTWRITEBYTECODE 1
@@ -49,10 +49,10 @@ COPY ./docker/production/django/ /
 
 RUN ["chmod", "+x", "/entrypoint"]
 
-# copy out /start-web
-# start-web executes `migrate` and `runserver 0.0.0.0:8000`
-COPY ./docker/local/django/start-web /start-web
-RUN sed -i 's/\r//' /start-web
-RUN chmod +x /start-web
+# copy out /start-web_django
+# start-web_django executes `migrate` and `runserver 0.0.0.0:8000`
+COPY ./docker/local/django/start-web_django /start-web_django
+RUN sed -i 's/\r//' /start-web_django
+RUN chmod +x /start-web_django
 
 ENTRYPOINT ["/entrypoint"]
