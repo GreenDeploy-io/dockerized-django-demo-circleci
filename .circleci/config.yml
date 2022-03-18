@@ -9,7 +9,7 @@ version: 2.1
 # and https://support.circleci.com/hc/en-us/articles/360050623311-Docker-Hub-rate-limiting-FAQ
 docker-auth: &docker-auth
   auth:
-    username: $DOCKERHUB_PASSWORD
+    username: $DOCKERHUB_USERNAME
     password: $DOCKERHUB_PAT
 
 orbs:
