@@ -13,6 +13,7 @@ import os
 from pathlib import Path
 
 import environ
+from django.core.management.utils import get_random_secret_key
 
 ROOT_DIR = Path(__file__).resolve(strict=True).parent.parent.parent
 # dockerized_django_demo_circleci/
@@ -48,7 +49,7 @@ LOCALE_PATHS = [str(ROOT_DIR / "locale")]
 
 # Raises Django's ImproperlyConfigured
 # exception if SECRET_KEY not in os.environ
-SECRET_KEY = env('SECRET_KEY')
+SECRET_KEY = env('SECRET_KEY', default=get_random_secret_key())
 
 # URLS
 # ------------------------------------------------------------------------------
