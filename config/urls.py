@@ -33,6 +33,7 @@ urlpatterns = [
     path("users/", include("dockerized_django_demo_circleci.users.urls", namespace="users")),
     path("accounts/", include("allauth.urls")),
     # Your stuff: custom urls includes go here
+    path('polls/', include('polls.urls', namespace="polls")),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 if settings.DEBUG:

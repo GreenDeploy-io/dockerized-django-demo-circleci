@@ -77,6 +77,7 @@ THIRD_PARTY_APPS = [
 
 LOCAL_APPS = [
     "dockerized_django_demo_circleci.users",
+    'polls.apps.PollsConfig',
 ]
 
 # https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps
