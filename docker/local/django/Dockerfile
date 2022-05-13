@@ -20,6 +20,8 @@ RUN apt-get update
 
 RUN apt-get install python3-pip -y
 
+RUN pip3 install --upgrade pip==22.0.4
+
 # for other standard libraries
 RUN apt-get install -y --no-install-recommends \
     # psycopg2 dependencies
